@@ -1,0 +1,9 @@
+/*DATABASE INFORMATION*/
+
+ROLE MANAGER
+username: wiggy1@asp.net
+password: Wdp-2021
+
+REGISTERED USER
+username: pepper@asp.net
+password:Wdp-2021
