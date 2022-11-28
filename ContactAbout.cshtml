@@ -1,0 +1,141 @@
+﻿@{
+    ViewData["Title"] = "Contact & About";
+}
+
+<div class="container-fluid">
+    <article>
+        <section id="bg6">
+            <h1 id="ft6" >@ViewData["Title"]</h1>
+            <p align="center" class="intro">
+
+            </p>
+        </section>
+        <div class="accordion" id="myAcc">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">ABOUT US</button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#myAcc">
+                    <div class="card-body">
+                        This is The website which introduces a range of latest technological innovations in the era of Industry 4.0.
+                        The technologies which are introduced here include Artificial Intelligence (AI), Internet of things (IoT),
+                        Cognitive Computing (CC), Cloud Computing, Robotics, Blockchain. There is also a list of relevant companies which
+                        made considerable contribution to the transition of these outstanding technology.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">COPYRIGHTS</button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#myAcc">
+                    <div class="card-body">
+                        <i class="material-icons" style="color:red;">copyright</i>
+                        All rights reserved and no contents of this website should be taken without permission. For the copyright relevant issues, please contact our manager for further information.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">PRIVACY</button>
+                    </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#myAcc">
+                    <div class="card-body">
+                        <i class="material-icons" style="color:red;">security</i>
+                        This is a trustworthy site with authorization. Thus, the information security of the users will be of our top priority.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">JOBS</button>
+                    </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#myAcc">
+                    <div class="card-body">
+                        <i class="material-icons" style="color:darkcyan;">work</i>
+                        Please heading to our recruitment site for more information of our vacant positions. We are looking forward to thriving better in the future with your participation in the team.<br />
+                        Receive job advertisements from us? Please click on the link ->
+                        <input type="submit" value="CLICK Me" class="btn btn-outline-danger" />
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">CONTACT US</button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#myAcc">
+                    <div class="card-body">
+                        <h5>Here is a contact list of our administration board</h5>
+                        <section class="row">
+                            <div class="col-md-6 col-sm-6 col-12">
+                                <h6 style="font-weight:bold; ">Manager</h6> <br />
+                                <i class="material-icons" style=" color:darkblue;">perm_identity</i><span style="text-align:center;">Uyen Nguyen</span><br />
+                                <i class="material-icons" style=" color:darkblue;">email</i><span style="text-align:center;">uhuong571@gmail.com</span><br />
+                                <i class="material-icons" style=" color:darkblue;">phone</i><span style="text-align:center;">+61 0000 000 000</span><br />
+                                <i class="material-icons" style=" color:darkblue;">schedule</i><span style="text-align:center;">Monday-Friday from 9am to 5pm</span><br />
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-12">
+                                <h6 style="font-weight:bold;">Administrative member</h6> <br />
+                                <i class="material-icons" style=" color:darkblue;">perm_identity</i><span style="text-align:center;">Sarah</span><br />
+                                <i class="material-icons" style=" color:darkblue;">email</i><span style="text-align:center;">Sarah@gmail.com</span><br />
+                                <i class="material-icons" style=" color:darkblue;">phone</i><span style="text-align:center;">+61 0000 000 000</span><br />
+                                <i class="material-icons" style=" color:darkblue;">schedule</i><span style="text-align:center;">Monday-Friday from 9am to 5pm</span><br />
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </article>
+    <article style="padding: 30px">
+        <section class="row">
+            <div class="col-md-4 col-sm-4 col-12">
+                <p>Please enter your email below:</p>
+                <i class="material-icons" style="color:darkcyan;">email</i>
+
+                <input style="min-height: 50px;" placeholder="Your email here" />
+                <p>Please enter your name below:</p>
+                <i class="material-icons" style="color:darkcyan;">perm_identity</i>
+
+                <input style="min-height: 50px;" placeholder="Your name here" />
+            </div>
+            <div class="col-md-4 col-sm-4 col-12">
+                <p>Please enter your message below:</p>
+                <i class="material-icons" style="color:darkcyan;">forum</i>
+
+                <input style="min-height: 150px;" placeholder="Enter your message here" />
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-12">
+                <h1>LET'S US HEAR YOUR VOICE!'</h1>
+
+            </div>
+        </section>
+        <section>
+            
+            <div class="col-md-4 col-sm-4 col-12">
+                <input style="margin-left:50px;" type="submit" class="btn btn-primary" />
+            </div>
+        </section>
+        
+    </article>
+
+    
+
+</div>

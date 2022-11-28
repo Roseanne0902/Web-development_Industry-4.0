@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "Companies and Organizations";
+}
+
+
+<section class="container-fluid">
+    <article>
+        <section id="bg3">
+            <h1 id="indc">@ViewData["Title"]</h1>
+            <p align="center" class="intro">
+                The Industry 4.0 market is forecasted to reach $1 trillion by 2030, dominated by global technology <br />
+                giants including Alphabet-Google, HP, Samsung, IBM, NEC, Microsoft, and more. According to the new <br />
+                4-volume report by HSRC: Global Industry 4.0 Market & Technologies 2018-2023, the Industry 4.0 <br />
+                market will reach $214B by 2023 (https://www.prnewswire.com/news-releases/global-tech-giants-to-lead-the-industry-40-revolution-300585640.html)
+            </p>
+        </section>
+        <section style:"padding-top:15px;" class="container-fluid">
+            <section class="row">
+
+                <figure style="padding-right:10px; padding-left:10px;" class="col-md-6 col-sm-12 col-12">
+                    <img src="~/images/companies/ibm.jpg" alt="IBM" />
+                    <figcaption class="figcap">
+                           IBM<br />
+                        <a class="btn btn-info" href="https://www.ibm.com/us-en/">
+                            Visit website
+                        </a>
+                    </figcaption>
+                </figure>
+
+
+                <figure style="padding-right:10px; padding-left:10px;" class="col-md-6 col-sm-12 col-12">
+                    <img src="~/images/companies/amazon.jpg" alt="Amazon" />
+                    <figcaption class="figcap">
+                        Amazon<br />
+                        <a class="btn btn-info" href="https://aws.amazon.com/manufacturing/">
+                            Visit website
+                        </a>
+                    </figcaption>
+                </figure>
+
+
+
+
+                <figure id="img" class="col-md-12 col-sm-12 col-12">
+                    <img src="~/images/companies/google.jpg" alt="Google" style="width: 100%;" />
+                    <figcaption class="figcap">
+                        Google<br />
+                        <a class="btn btn-info" href="https://ai.google/">
+                            Visit website
+                        </a>
+                    </figcaption>
+                </figure>
+
+
+
+
+                <figure style="padding-right:10px; padding-left:10px;" class="col-md-6 col-sm-12 col-12">
+                    <img src="~/images/companies/microsoft.jpg" />
+                    <figcaption class="figcap">
+                        Microsoft<br />
+                        <a class="btn btn-info" href="https://www.microsoft.com/en-us/ai?activetab=pivot1%3aprimaryr6">
+                            Visit website
+                        </a>
+                    </figcaption>
+                </figure>
+
+
+                <figure style="padding-right:10px; padding-left:10px;" class="col-md-6 col-sm-12 col-12">
+                    <img src="~/images/companies/CSIRO.jpg" />
+                    <figcaption class="figcap">
+                        CSIRO<br />
+                        <a class="btn btn-info" href="https://www.csiro.au/">
+                            Visit website
+                        </a>
+                    </figcaption>
+                </figure>
+
+
+
+                <figure id="img" class="col-md-12 col-sm-12 col-12">
+                    <img src="~/images/companies/department.jpg" alt="Department" style="width: 100%;" />
+                    <figcaption class="figcap">
+                        Department of Industry, Science, Energy and Resources<br />
+                        <a class="btn btn-info" href="https://www.industry.gov.au/">
+                            Visit website
+                        </a>
+                    </figcaption>
+                </figure>
+            </section>
+
+        </section>
+    </article>
+    
+    <section style="margin-left:10px; margin-right:10px;">
+        <hr />
+        <div id="fbheading">Feedback</div>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div style="text-align:center;"><a href="~/FeedbackPosts/Create/" class="btn btn-info">Submit your feedback</a></div>
+
+        }
+        else
+        {
+            <div style="text-align:center;">
+                Please <a href="~/Identity/Account/Login?returnUrl=~/Home/ComOr/#fbheading"> login </a> or
+                <a href="~/Identity/Account/Register?returnUrl=~/Home/ComOr/#fbheading"> create an account</a> to post your discussion on this page
+            </div>
+        }
+
+
+        @model IEnumerable<Assignment1.Models.FeedbackPost>
+
+        @foreach (var item in Model)
+        {
+            <h2>@Html.DisplayFor(modelItem => item.Heading)</h2>
+            <p>@Html.DisplayFor(modelItem => item.CompanyOrganisationName)</p>
+            <p>
+                @{
+                    for (int i = 0; i < item.StarRating; i++)
+                    {
+                        <span style="color: #f8bd08; ">&#x2605;</span>
+                    }
+                    for (int i = 0; i < 5 - item.StarRating; i++)
+                    {
+                        <span>&#x2606;</span>
+                    }
+                }
+            </p>
+            <p>@Html.DisplayFor(modelItem => item.Feedback)</p>
+            <p>Feedback by <b>@Html.DisplayFor(modelItem => item.UserName)</b> on @Html.DisplayFor(modelItem => item.Date)</p>
+            <a asp-controller="FeedbackPosts" asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-secondary">Details</a>
+            <a asp-controller="FeedbackPosts" asp-action="IncreaseAgree" asp-route-id="@item.Id" class="btn btn-success">Agree(@item.Agree)</a>
+            <a asp-controller="FeedbackPosts" asp-action="IncreaseDisagree" asp-route-id="@item.Id" class="btn btn-danger">Disagree(@item.Disagree)</a>
+            @if (User.IsInRole("Manager"))
+            {
+                <a asp-controller="FeedbackPosts" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark" style="float:right;">Edit</a>
+                <a asp-controller="FeedbackPosts" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-dark" style="float:right;">Delete</a>
+            }
+
+            <hr />
+        }
+    </section>
+</section>

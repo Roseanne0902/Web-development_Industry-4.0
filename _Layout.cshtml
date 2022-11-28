@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Industry 4.0</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/mystyle.css" />
+    <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="~/css/elastic-grid.min.css" type="text/css" />
+    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom-0 box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">Industry 4.0</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="ComOr">Companies & Organizations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="EmerTechs">Emerging Technologies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="ContactAbout">Contact & About</a>
+                        </li>
+                        <li class="nav-item">
+                            @if (User.IsInRole("Manager"))
+                            {
+                                <a class="nav-link text-light" asp-area="" asp-controller="FeedbackPosts" asp-action="Index">Feedback</a>
+                            }
+                            </li>
+                            
+
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" style="padding-left:0px; padding-right:0px; padding-top:0px; ">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top-0 footer text-muted bg-dark">
+        <div class="container">
+            <div class="row">
+                <a class="nav-link text-light col-md-3 col-sm-6 col-12" asp-area="" asp-controller="Home" asp-action="Index">Home</a><br />
+                <a class="nav-link text-light col-md-3 col-sm-6 col-12" asp-area="" asp-controller="Home" asp-action="ContactAbout" asp-fragment="headingOne">About Us</a><br />
+                <a class="nav-link text-light col-md-3 col-sm-6 col-12" asp-area="" asp-controller="Home" asp-action="ContactAbout" asp-fragment="headingTwo">Copyrights</a><br />
+                <a class="nav-link text-light col-md-3 col-sm-6 col-12" asp-area="">Follow Us</a><br />
+            </div>
+            <div class="row">
+                <a class="nav-link text-light col-md-3 col-sm-6 col-12" asp-area="" asp-controller="Home" asp-action="ComOr">Companies & Organizations</a><br />
+                <a class="nav-link text-light col-md-3 col-sm-6 col-12" asp-area="" asp-controller="Home" asp-action="ContactAbout" asp-fragment="headingFive">Contact Us</a><br />
+                <a class="nav-link text-light col-md-3 col-sm-6 col-12" asp-area="" asp-controller="Home" asp-action="ComOr" asp-fragment="fbheading">Feedback</a><br />
+                    
+                    <a href="https://www.google.com" class="fa fa-google" style="color:red;" title="Follow us on Google"></a>&nbsp; &nbsp; &nbsp;
+
+                    <a href="https://www.youtube.com" class="fa fa-youtube" style="color:red;" title="Follow us on Youtube"></a>&nbsp; &nbsp; &nbsp;
+
+                    <a href="https://www.twitter.com" class="fa fa-twitter" style="color:deepskyblue;" title="Follow us on Twitter"></a>&nbsp; &nbsp; &nbsp;
+
+                    <a href="https://www.facebook.com" class="fa fa-facebook" style="color:deepskyblue;" title="Follow us on Facebook"></a>&nbsp; &nbsp; &nbsp;
+
+                    <a href="https://www.linkedin.com" class="fa fa-linkedin" style="color:deepskyblue;" title="Follow us on LinkedIn"></a>&nbsp; &nbsp; &nbsp;
+                </div> 
+            <div class="row">
+                <a class="nav-link text-light col-md-3 col-sm-6 col-12" asp-area="" asp-controller="Home" asp-action="EmerTechs">Emerging Technologies</a><br />
+                <a class="nav-link text-light col-md-3 col-sm-6 col-12" asp-area="" asp-controller="Home" asp-action="ContactAbout" asp-fragment="headingThree">Privacy</a><br />
+                
+            </div>
+            <div>
+                <a class="nav-link text-light col-md-3 col-sm-6 col-12" asp-area="" asp-controller="Home" asp-action="ContactAbout" asp-fragment="headingFour">Jobs</a><br />
+            </div>
+            </div>
+</footer>
+   
+   
+    
+    <script src="~/js/JS.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"></script>
+    <script src="~/js/modernizr.custom.js"></script>
+    <script src="~/js/classie.js"></script>
+    <script src="~/js/elastic_grid.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
